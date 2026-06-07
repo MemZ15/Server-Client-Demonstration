@@ -11,7 +11,7 @@ int main() {
         CommandHandler commands{ };
 
         /* Register commands and set command handler for server */
-        commands.RegisterCommands( commands );
+        commands.RegisterCommands();
         server.SetCommandHandler( &commands );
 
         /* Initialize server and run IO Context */

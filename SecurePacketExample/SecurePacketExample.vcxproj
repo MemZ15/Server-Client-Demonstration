@@ -127,7 +127,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandHandler.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SessionHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandHandler.h" />

@@ -2,17 +2,20 @@
 
 int main() {
 
-    /* create client instance */ 
-    Client client{ };
+    Client ClientCtx{};
 
-    /* connect to server */
-    if ( !client.Connect( "127.0.0.1", 8080 ) )
-        return 1;
+    try {
+        if (!ClientCtx.Initialize())
+            return -1;
 
-    /* run client loop */ 
-    client.Run( );
+        if (!ClientCtx.Connect("127.0.0.1", 8080))
+            return -1;
 
-    system( "pause" );
+        ClientCtx.RunClient();
+    }
+    catch ( std::exception& ex ) {
+        std::cerr << "Exception: " << ex.what() << "\n";
+    }
 
     return 0;
 }

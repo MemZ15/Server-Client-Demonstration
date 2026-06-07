@@ -29,24 +29,25 @@ public:
     }
 
 
-    CommandHandler RegisterCommands(CommandHandler& handler)
+    void RegisterCommands()
     {
-        handler.Register("ping", [](const std::string&)
+        Register("ping",
+                 [](const std::string&)
         {
-            return std::string("pong");
+            return "pong";
         });
 
-        handler.Register("echo", [](const std::string& args)
+        Register("echo",
+                 [](const std::string& args)
         {
-            return std::string("ECHO Called: ") + args;
+            return "ECHO Called: " + args;
         });
 
-        handler.Register("help", [](const std::string& args)
+        Register("help",
+                 [](const std::string&)
         {
-            return std::string("Avaliable Commands: echo, ping, help") + args;
+            return "Available Commands: ping, echo, help";
         });
-
-        return handler;
     }
 
 private:
