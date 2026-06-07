@@ -23,6 +23,7 @@
 *.dll
 *.so.*
 
+.vs/
 
 # Fortran module files
 *.mod
