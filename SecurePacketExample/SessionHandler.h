@@ -11,7 +11,7 @@ public:
         : socket_(std::move(socket))
     {}
 
-    /* begin asynchronous receive loop */
+    /* begin receive loop */
     void Start() { Read( ); }
 
     /* attach command processor for incoming messages */
